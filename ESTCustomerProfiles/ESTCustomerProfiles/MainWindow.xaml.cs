@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ESTCustomerProfiles.ViewModels;
 
 namespace ESTCustomerProfiles
 {
@@ -20,9 +21,23 @@ namespace ESTCustomerProfiles
     /// </summary>
     public partial class MainWindow : Window
     {
+        ESTDataSet dataSet = new ESTDataSet();
+        CustomerVM _viewModel = new CustomerVM();
         public MainWindow()
         {
             InitializeComponent();
+            base.DataContext = _viewModel;
+            
+        }
+        
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            //Models.Customer customer = new Models.Customer();
+            //Label_Name.Visibility = Visibility.Visible;
+            //Label_Name.Content = "customer";
+            //listbox_names.ItemsSource = new List<Models.Customer>();
+            LCSData lcs = new LCSData();
+            lcs.getData(301814, 1592998);
         }
     }
 }
