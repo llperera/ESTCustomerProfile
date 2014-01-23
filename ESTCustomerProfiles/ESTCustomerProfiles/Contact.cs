@@ -7,15 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Holiday
+    public partial class Contact
     {
+        public int contactId { get; set; }
         public int customerId { get; set; }
-        public System.DateTime holiday1 { get; set; }
+        public string name { get; set; }
+        public string designation { get; set; }
+        public string email { get; set; }
+        public string workPhone { get; set; }
+        public string mobile { get; set; }
+        public string additionalInfo { get; set; }
     
         public virtual Customer Customer { get; set; }
     }

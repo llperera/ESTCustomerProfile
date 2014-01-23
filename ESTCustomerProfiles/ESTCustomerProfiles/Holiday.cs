@@ -7,19 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Severity_Action
+    public partial class Holiday
     {
         public int customerId { get; set; }
-        public string action1 { get; set; }
-        public string action2 { get; set; }
-        public string action3 { get; set; }
-        public string action4 { get; set; }
-        public string additionalInfo { get; set; }
+        public System.DateTime holiday1 { get; set; }
     
         public virtual Customer Customer { get; set; }
     }

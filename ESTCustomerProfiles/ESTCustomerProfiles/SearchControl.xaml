@@ -4,10 +4,60 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="327.273" d:DesignWidth="351.948">
+             d:DesignHeight="500" d:DesignWidth="500">
    
     <Grid>
-        <Grid x:Name="grid_Search"/>
-        <TextBox Text="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;                       dfjlsktot" FontSize="22"/>
+        <Grid x:Name="grid_Search">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="label_name" Content="{Binding Path= Info }" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.RowSpan="1" Margin="0" Background="White" Foreground="#FF4B385D" FontSize="34" FontWeight="Light" Grid.Column="1" />
+            <Label x:Name="label_support" Content="Severities Supported" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="1" Margin="0" Background="#FF4B385D" Foreground="White" FontSize="16" FontWeight="Light" Grid.Column="1" />
+            <RichTextBox x:Name="richTextBox_sevSupp" Grid.Row="2" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Grid.Column="1" IsReadOnly="True">
+                <FlowDocument>
+                   <Paragraph>
+                        <Run Text="{Binding Path=Severities.ToArray();}"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label x:Name="label_severity" Content="Severity Actions" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.RowSpan="1" Margin="0" Background="#FF4B385D" Foreground="White" FontSize="16" FontWeight="Light" Grid.Column="1" />
+            <RichTextBox x:Name="richTextBox_severities" Grid.Row="4" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Grid.Column="1" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=" "/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label x:Name="label_keys" Content="Support Keys &amp; Queue Information" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="5" Grid.RowSpan="1" Margin="0" Background="#FF4B385D" Foreground="White" FontSize="16" FontWeight="Light" Grid.Column="1" />
+            <RichTextBox x:Name="richTextBox_support" Grid.Row="6" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Grid.Column="1" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph>
+                        Support Organization: <Run Text="{Binding Path=SuppOrg}"/>
+                    </Paragraph>
+                    <Paragraph>
+                        Queue: <Run Text="{Binding Path=Queue}"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label x:Name="label_last" Content="Support Action" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="7" Grid.RowSpan="1" Margin="0" Background="#FF4B385D" Foreground="White" FontSize="16" FontWeight="Light" Grid.Column="1" />
+            <RichTextBox x:Name="richTextBox_last" Grid.Row="8" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Grid.Column="1" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </Grid>
     </Grid>
 </UserControl>

@@ -21,23 +21,34 @@ namespace ESTCustomerProfiles
     /// </summary>
     public partial class MainWindow : Window
     {
-        ESTDataSet dataSet = new ESTDataSet();
-        CustomerVM _viewModel = new CustomerVM();
         public MainWindow()
         {
             InitializeComponent();
-            base.DataContext = _viewModel;
-            
         }
         
         private void Search(object sender, RoutedEventArgs e)
         {
+
+            string id = textbox_id.Text;
+            CustomerVM customer = new CustomerVM(id);
+            base.DataContext = customer;
+            SearchControl details = new SearchControl(id);
+            this.contentControl.Content = details;
             //Models.Customer customer = new Models.Customer();
             //Label_Name.Visibility = Visibility.Visible;
             //Label_Name.Content = "customer";
             //listbox_names.ItemsSource = new List<Models.Customer>();
-            LCSData lcs = new LCSData();
-            lcs.getData(301814, 1592998);
+            //LCSData lcs = new LCSData();
+            //lcs.getData();
         }
+
+        private void search_Keydown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Search(sender, e);
+            }
+        }
+        
     }
 }

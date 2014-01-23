@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Collections.Generic;

@@ -7,16 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Support
+    public partial class Supported_Severity
     {
         public int customerId { get; set; }
-        public int supportKey { get; set; }
-        public string description { get; set; }
+        public int severity { get; set; }
     
         public virtual Customer Customer { get; set; }
     }

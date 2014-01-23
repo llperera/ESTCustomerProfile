@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Collections.Generic;
@@ -16,6 +16,7 @@ namespace ESTCustomerProfiles.Models
     {
         public Customer()
         {
+            this.Contacts = new HashSet<Contact>();
             this.Holidays = new HashSet<Holiday>();
             this.Supports = new HashSet<Support>();
             this.Supported_Severities = new HashSet<Supported_Severity>();
@@ -25,9 +26,9 @@ namespace ESTCustomerProfiles.Models
         public string customerName { get; set; }
         public string documentPath { get; set; }
         public string spptOrganization { get; set; }
-        public string queue { get; set; }
         public Nullable<decimal> offset { get; set; }
     
+        public virtual ICollection<Contact> Contacts { get; set; }
         public virtual Guideline Guideline { get; set; }
         public virtual ICollection<Holiday> Holidays { get; set; }
         public virtual Severity_Action Severity_Action { get; set; }

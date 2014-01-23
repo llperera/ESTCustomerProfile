@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ESTCustomerProfiles.Models
+namespace ESTCustomerProfiles
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,7 @@ namespace ESTCustomerProfiles.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Guideline> Guidelines { get; set; }
         public virtual DbSet<Holiday> Holidays { get; set; }
