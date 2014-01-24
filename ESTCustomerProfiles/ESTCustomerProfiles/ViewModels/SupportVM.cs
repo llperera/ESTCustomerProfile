@@ -9,11 +9,12 @@ namespace ESTCustomerProfiles.ViewModels
 {
     class SupportVM
     {
-        public SupportVM(int id)
+        public SupportVM(Customer customer)
         {
-           
+            _support = customer.Supports.ToList();
         }
-        Support _support = new Support();
+        List<Support> _support = new List<Support>();
+
 
     }
 }

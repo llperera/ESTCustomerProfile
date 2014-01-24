@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ESTCustomerProfiles;
 using ESTCustomerProfiles.ViewModels;
 
 namespace ESTCustomerProfiles
@@ -24,6 +25,10 @@ namespace ESTCustomerProfiles
         public MainWindow()
         {
             InitializeComponent();
+            namesVM names = new namesVM();
+            Subscribe();
+            textbox_id.ItemsSource = names.names;
+            textbox_id.FilterMode = AutoCompleteFilterMode.Contains;
         }
         
         private void Search(object sender, RoutedEventArgs e)
@@ -34,15 +39,25 @@ namespace ESTCustomerProfiles
             base.DataContext = customer;
             SearchControl details = new SearchControl(id);
             this.contentControl.Content = details;
-            //Models.Customer customer = new Models.Customer();
-            //Label_Name.Visibility = Visibility.Visible;
-            //Label_Name.Content = "customer";
-            //listbox_names.ItemsSource = new List<Models.Customer>();
+
             //LCSData lcs = new LCSData();
             //lcs.getData();
         }
 
-        private void search_Keydown(object sender, KeyEventArgs e)
+        //private void search_keyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Return)
+        //    {
+        //        Search(sender, e);
+        //    }
+        //}
+
+        public void Subscribe()
+        {
+            textbox_id.KeyDown += search_keyDown;
+        }
+
+        public void search_keyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {

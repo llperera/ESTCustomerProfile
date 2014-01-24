@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d0aec8d05be245a79a6fe575a342cc64" Name="Diagram1">
+        <EntityTypeShape EntityType="ESTModel.Contact" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Customer" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Guideline" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Holiday" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Severity_Action" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Support" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESTModel.Supported_Severity" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <AssociationConnector Association="ESTModel.FK_Contacts_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ESTModel.FK_Customer_Guidelines" ManuallyRouted="false" />
+        <AssociationConnector Association="ESTModel.FK_Holiday_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ESTModel.FK_Severity_Action_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ESTModel.FK_Support_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ESTModel.FK_Supported_Severities_Customer" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

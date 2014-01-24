@@ -28,16 +28,16 @@ namespace ESTCustomerProfiles
             base.DataContext = customer;
             InitializeComponent();
             FlowDocument doc = new FlowDocument();
-            //RichTextBox rtb = new RichTextBox();
-            
+
+
             doc = Severities(customer.Severities);
             this.richTextBox_sevSupp.Document = doc;
             doc = Support(customer.SuppOrg, customer.Support);
             this.richTextBox_support.Document = doc;
-            
+
         }
 
-        public FlowDocument Severities( List<string> severities)
+        public FlowDocument Severities(List<string> severities)
         {
             FlowDocument doc = new FlowDocument();
             List list = new List();
@@ -53,7 +53,7 @@ namespace ESTCustomerProfiles
                     list.ListItems.Add(new ListItem(para));
                 }
             }
-            
+
             doc.Blocks.Add(list);
             return doc;
         }
@@ -76,18 +76,18 @@ namespace ESTCustomerProfiles
             header.FontWeight = FontWeights.Bold;
             header.Cells.Add(new TableCell(new Paragraph(new Run("Support Key"))));
             header.Cells.Add(new TableCell(new Paragraph(new Run("Activity Description"))));
-            header.Cells.Add(new TableCell(new Paragraph(new Run("Queue")))); 
+            header.Cells.Add(new TableCell(new Paragraph(new Run("Queue"))));
 
-            foreach (Support i in support)
-            {
-                table.RowGroups[0].Rows.Add(new TableRow()); 
-                TableRow row = table.RowGroups[0].Rows[1];
-                row.FontWeight = FontWeights.Bold;
-                row.Cells.Add(new TableCell(new Paragraph(new Run(i.supportKey.ToString()))));
-                row.Cells.Add(new TableCell(new Paragraph(new Run(i.description.ToString()))));
-                row.Cells.Add(new TableCell(new Paragraph(new Run(i.queue.ToString()))));
-            }
-            
+            //foreach (Support i in support)
+            //{
+            //    table.RowGroups[0].Rows.Add(new TableRow()); 
+            //    TableRow row = table.RowGroups[0].Rows[1];
+            //    row.FontWeight = FontWeights.Bold;
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(i.supportKey.ToString()))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(i.description.ToString()))));
+            //    row.Cells.Add(new TableCell(new Paragraph(new Run(i.queue.ToString()))));
+            //}
+
             return doc;
         }
     }
