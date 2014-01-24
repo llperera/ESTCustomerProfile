@@ -95,6 +95,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomerInfo.cs" />
+    <Compile Include="CustomerInfoVM.cs" />
     <Compile Include="LCSData.cs" />
     <Compile Include="LCSEntities.cs" />
     <Compile Include="SearchControl.xaml.cs">

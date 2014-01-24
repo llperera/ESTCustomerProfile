@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ESTCustomerProfiles
 {
-    class SupportKey
+    public class SupportKey
     {
         public string key { get; set; }
         public string description { get; set; }
